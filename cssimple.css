@@ -6,6 +6,7 @@
 
 
 /* Table of contents
+- Variables
 - Grid
 - Base Styles
 - Typography
@@ -21,187 +22,146 @@
 - Media Queries
 */
 
+/* CSS rese by http://meyerweb.com/eric/tools/css/reset/  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --container-default-width: 960px; 
+  --container-default-padding: 20px;
+}
+
 
 /* Grid */
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: var(--container-default-width);
   margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding: 0 var(--container-default-padding);
 }
 
-.column,
-.columns {
-  width: 100%;
-  float: left;
-  box-sizing: border-box;
-}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
 
-/* For devices larger than 400px */
-@media (min-width: 400px) {
-  .container {
-    width: 85%;
-    padding: 0;
-  }
-}
-
-/* For devices larger than 550px */
-@media (min-width: 550px) {
-  .container {
-    width: 80%;
-  }
-
-  .column,
-  .columns {
+[class*="col-"] {
+    float: left;
     margin-left: 4%;
-  }
-
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0;
-  }
-
-  .one.column,
-  .one.columns {
-    width: 4.66666666667%;
-  }
-
-  .two.columns {
-    width: 13.3333333333%;
-  }
-
-  .three.columns {
-    width: 22%;
-  }
-
-  .four.columns {
-    width: 30.6666666667%;
-  }
-
-  .five.columns {
-    width: 39.3333333333%;
-  }
-
-  .six.columns {
-    width: 48%;
-  }
-
-  .seven.columns {
-    width: 56.6666666667%;
-  }
-
-  .eight.columns {
-    width: 65.3333333333%;
-  }
-
-  .nine.columns {
-    width: 74.0%;
-  }
-
-  .ten.columns {
-    width: 82.6666666667%;
-  }
-
-  .eleven.columns {
-    width: 91.3333333333%;
-  }
-
-  .twelve.columns {
     width: 100%;
-    margin-left: 0;
-  }
+}
 
-  .one-third.column {
-    width: 30.6666666667%;
-  }
-
-  .two-thirds.column {
-    width: 65.3333333333%;
-  }
-
-  .one-half.column {
-    width: 48%;
-  }
+[class*="col-"]:first-child {
+  margin-left: 0;
+}
 
   /* Offsets */
-  .offset-by-one.column,
-  .offset-by-one.columns {
+  .col-offset-1 {
     margin-left: 8.66666666667%;
   }
 
-  .offset-by-two.column,
-  .offset-by-two.columns {
+  .col-offset-2 {
     margin-left: 17.3333333333%;
   }
 
-  .offset-by-three.column,
-  .offset-by-three.columns {
+  .col-offset-3 {
     margin-left: 26%;
   }
 
-  .offset-by-four.column,
-  .offset-by-four.columns {
+  .col-offset-4 {
     margin-left: 34.6666666667%;
   }
 
-  .offset-by-five.column,
-  .offset-by-five.columns {
+  .col-offset-5 {
     margin-left: 43.3333333333%;
   }
 
-  .offset-by-six.column,
-  .offset-by-six.columns {
+  .col-offset-6 {
     margin-left: 52%;
   }
 
-  .offset-by-seven.column,
-  .offset-by-seven.columns {
+  .col-offset-7 {
     margin-left: 60.6666666667%;
   }
 
-  .offset-by-eight.column,
-  .offset-by-eight.columns {
+  .col-offset-8 {
     margin-left: 69.3333333333%;
   }
 
-  .offset-by-nine.column,
-  .offset-by-nine.columns {
+  .col-offset-9 {
     margin-left: 78.0%;
   }
 
-  .offset-by-ten.column,
-  .offset-by-ten.columns {
+  .col-offset-10 {
     margin-left: 86.6666666667%;
   }
 
-  .offset-by-eleven.column,
-  .offset-by-eleven.columns {
+  .col-offset-11 {
     margin-left: 95.3333333333%;
   }
 
-  .offset-by-one-third.column,
-  .offset-by-one-third.columns {
+  .col-offset-12 {
     margin-left: 34.6666666667%;
   }
 
-  .offset-by-two-thirds.column,
-  .offset-by-two-thirds.columns {
-    margin-left: 69.3333333333%;
-  }
-
-  .offset-by-one-half.column,
-  .offset-by-one-half.columns {
-    margin-left: 52%;
-  }
-
-}
-
-
 /* Base Styles */
-/* NOTE
-html is set to 62.5% so that all the REM measurements throughout Skeleton
+/* html is set to 62.5% so that all the REM measurements throughout this code
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%;
@@ -209,10 +169,9 @@ html {
 
 body {
   font-size: 1.5em;
-  /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
 }
 
@@ -569,10 +528,7 @@ hr {
   border-top: 1px solid #E1E1E1;
 }
 
-
-/* Clearing */
-
-/* Self Clearing Goodness */
+/* Self Clearing */
 .container:after,
 .row:after,
 .u-cf {
@@ -580,28 +536,3 @@ hr {
   display: table;
   clear: both;
 }
-
-
-/* Media Queries*/
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
