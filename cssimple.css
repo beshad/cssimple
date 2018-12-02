@@ -4,24 +4,6 @@
 * me.xeba.co.nz
 */
 
-
-/* Table of contents
-- Variables
-- Grid
-- Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
-- Spacing
-- Utilities
-- Clearing
-- Media Queries
-*/
-
 /* CSS rese by http://meyerweb.com/eric/tools/css/reset/  */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -66,6 +48,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 *, 
 *::before,
@@ -171,7 +155,7 @@ body {
   font-size: 1.5em;
   line-height: 1.6;
   font-weight: 400;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #222;
 }
 
