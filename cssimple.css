@@ -58,10 +58,29 @@ table {
 }
 
 :root {
+  /* default font size for html is set to 62.5% so that all the REM measurements throughout this code are based on 10px sizing. So basically 1.5rem = 15px :) */
+  --default-font-size: 62.5%;
+  --default-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --default-font-weight: 400;
   --container-default-width: 960px; 
   --container-default-padding: 20px;
+  --primary-color: #909293;
+  --primary-color-hover: #7f9ba4;
+  --default-white: #fff;
+  --default-black:#222;
 }
 
+/* Base Styles */
+html {
+  font-size: var(--default-font-size);
+}
+
+body {
+  line-height: 1.6;
+  font-weight: var(--default-font-weight);
+  font-family: var(--default-font-family);
+  color: var(--default-black);
+}
 
 /* Grid */
 .container {
@@ -142,22 +161,6 @@ table {
     margin-left: 100%;
   }
 
-/* Base Styles */
-/* html is set to 62.5% so that all the REM measurements throughout this code
-are based on 10px sizing. So basically 1.5rem = 15px :) */
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.5em;
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222;
-}
-
-
 /* Typography */
 h1,
 h2,
@@ -206,33 +209,6 @@ h6 {
   letter-spacing: 0;
 }
 
-/* Larger than phablet */
-@media (min-width: 550px) {
-  h1 {
-    font-size: 5.0rem;
-  }
-
-  h2 {
-    font-size: 4.2rem;
-  }
-
-  h3 {
-    font-size: 3.6rem;
-  }
-
-  h4 {
-    font-size: 3.0rem;
-  }
-
-  h5 {
-    font-size: 2.4rem;
-  }
-
-  h6 {
-    font-size: 1.5rem;
-  }
-}
-
 p {
   margin-top: 0;
 }
@@ -240,11 +216,11 @@ p {
 
 /* Links */
 a {
-  color: #7f9ba4;
+  color: var(--primary-color);
 }
 
 a:hover {
-  color: #0FA0CE;
+  color: var(--primary-color-hover);
 }
 
 
@@ -270,7 +246,6 @@ input[type="button"] {
   border-radius: 4px;
   border: 1px solid #bbb;
   cursor: pointer;
-  box-sizing: border-box;
 }
 
 .btn:hover,
@@ -293,9 +268,9 @@ button.btn-primary,
 input[type="submit"].btn-primary,
 input[type="reset"].btn-primary,
 input[type="button"].btn-primary {
-  color: #FFF;
-  background-color: #909293;
-  border-color: #909293;
+  color: var(--default-white);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .btn.btn-primary:hover,
@@ -308,9 +283,9 @@ button.btn-primary:focus,
 input[type="submit"].btn-primary:focus,
 input[type="reset"].btn-primary:focus,
 input[type="button"].btn-primary:focus {
-  color: #FFF;
-  background-color: #7f9ba4;
-  border-color: #7f9ba4;
+  color: var(--default-white);
+  background-color: var(--primary-color-hover);
+  border-color: var(--primary-color-hover);
 }
 
 /* Forms */
@@ -321,22 +296,22 @@ input[type="text"],
 input[type="tel"],
 input[type="url"],
 input[type="password"],
-textarea,
 select {
   height: 40px;
-  padding: 6px 10px;
+  padding: 0 10px;
+  line-height: 40px;
   /* The 6px vertically centers text on FF, ignored by Webkit */
-  background-color: #fff;
+  background-color: var(--default-white);
   border: 1px solid #D1D1D1;
   border-radius: 4px;
   box-shadow: none;
-  box-sizing: border-box;
 }
 
 textarea {
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
   min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding: 10px;
 }
 
 input[type="email"]:focus,
@@ -348,7 +323,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 textarea:focus,
 select:focus {
-  border: 1px solid #909293;
+  border: 1px solid var(--primary-color);
   outline: 0;
 }
 
