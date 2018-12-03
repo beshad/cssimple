@@ -3,13 +3,12 @@
 * Copyright 2018, Behshad Ghorbani
 * me.xeba.co.nz
 */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 /* Variables */
 :root {
   /* default font size for html is set to 62.5% so that all the REM measurements throughout this code are based on 10px sizing. So basically 1.5rem = 15px :) */
   --default-font-size: 62.5%;
-  --default-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --default-font-family: Helvetica, Arial, sans-serif;
   --default-font-weight: 400;
   --container-default-width: 960px;
   --container-default-padding: 20px;
